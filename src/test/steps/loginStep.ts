@@ -23,3 +23,15 @@ When("User click on the login button", async function (this: CustomWorld) {
 Then("Login should be success", async function (this: CustomWorld) {
     await this.loginPage.assertLoginSuccess();
 });
+
+Given("User enter invalid the username {string}", async function (this: CustomWorld, username: string) {
+    await this.loginPage.enterUsername(username);
+});
+
+Given("User enter the invalid password {string}", async function (this: CustomWorld, password: string) {
+    await this.loginPage.enterPassword(password);
+});
+
+Then("Login should be Unsuccess with text {string}", async function (this: CustomWorld, message: string) {
+    await this.loginPage.assertLoginFailure(message);
+});

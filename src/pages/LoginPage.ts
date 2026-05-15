@@ -4,6 +4,7 @@ export class LoginPage {
     private readonly username = "#username";
     private readonly password = "#password";
     private readonly submitButton = "#submit";
+    private readonly errorMessage = "#error";
 
     constructor(private readonly page: Page) {}
 
@@ -31,5 +32,11 @@ export class LoginPage {
         await expect(
             this.page.getByText("Congratulations student. You successfully logged in!")
         ).toBeVisible();
+    }
+
+    async assertLoginFailure(message: string) {
+        const error = this.page.locator(this.errorMessage);
+        await expect(error).toBeVisible();
+        await expect(error).toContainText(message);
     }
 }
