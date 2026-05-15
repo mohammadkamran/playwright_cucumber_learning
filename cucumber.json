@@ -8,8 +8,8 @@
     "publishQuiet": true,
     "dryRun": false,
     "retry": 1,
-    "parallel": 1,
+    "parallel": 2,
     "require": ["src/hooks/**/*.ts", "src/test/steps/**/*.ts"],
-    "requireModule": ["ts-node/register"]
+    "requireModule": ["tsx/cjs"]
   }
 }
