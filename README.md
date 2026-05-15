@@ -30,11 +30,11 @@ Results land in `reports/`:
 
 ## Environment variables
 
-| Variable    | Default                                                          | Purpose                              |
-| ----------- | ---------------------------------------------------------------- | ------------------------------------ |
-| `BASE_URL`  | `https://practicetestautomation.com/practice-test-login/`        | Application under test               |
-| `HEADLESS`  | `true`                                                           | Set to `false` to watch the browser  |
-| `TEST_ENV`  | `local`                                                          | Surfaced in the HTML report metadata |
+| Variable    | Default                                                          | Purpose                                                                                                       |
+| ----------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `BASE_URL`  | `https://practicetestautomation.com/practice-test-login/`        | Application under test                                                                                        |
+| `HEADLESS`  | auto (headless on CI, headed locally)                            | Auto-detected from `CI` env var. Force with `HEADLESS=true` (always headless) or `HEADLESS=false` (always headed) |
+| `TEST_ENV`  | `local`                                                          | Surfaced in the HTML report metadata                                                                          |
 
 Example:
 

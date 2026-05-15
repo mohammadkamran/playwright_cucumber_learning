@@ -1,5 +1,11 @@
 const reporter = require("multiple-cucumber-html-reporter");
 
+function isHeadless() {
+    if (process.env.HEADLESS === "true") return true;
+    if (process.env.HEADLESS === "false") return false;
+    return Boolean(process.env.CI);
+}
+
 reporter.generate({
     jsonDir: "reports",
     reportPath: "reports",
@@ -19,7 +25,7 @@ reporter.generate({
         data: [
             { label: "Project", value: "playwright_cucumber" },
             { label: "Environment", value: process.env.TEST_ENV || "local" },
-            { label: "Headless", value: process.env.HEADLESS === "false" ? "false" : "true" }
+            { label: "Headless", value: isHeadless() ? "true" : "false" }
         ]
     }
 });
