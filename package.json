@@ -1,0 +1,28 @@
+{
+  "name": "playwright_cucumber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "rimraf reports",
+    "test": "npm run clean:reports && cucumber-js --config cucumber.json && npm run report",
+    "test:smoke": "npm run clean:reports && cucumber-js --config cucumber.json --tags @smoke && npm run report",
+    "report": "node src/helper/report.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.9.0",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^22.10.0",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "rimraf": "^6.1.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.0"
+  }
+}
