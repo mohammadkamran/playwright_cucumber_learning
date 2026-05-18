@@ -1,12 +1,12 @@
 {
   "default": {
     "formatOptions": {
-      "snippetInterface": "async-await"
+      "snippetInterface": "async-await"  
     },
     "format": ["progress", "json:reports/cucumber-report.json"],
     "paths": ["src/test/features/**/*.feature"],
     "publishQuiet": true,
-    "dryRun": false,
+    "dryRun": true,
     "retry": 1,
     "parallel": 2,
     "require": ["src/hooks/**/*.ts", "src/test/steps/**/*.ts"],
